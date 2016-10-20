@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 require 'sinatra'
 
+# Set production so bind listens on 0.0.0.0 by default
+set :environment, :production
+
 statushash = Hash.new
 statushash["100"] = "Continue"
 statushash["101"] = "Switching Protocols"
