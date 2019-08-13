@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t="soh.re/status-code" .
+docker build -t="hub.soh.re/soh.re/status-code" .
