@@ -1,15 +1,17 @@
-FROM centos:latest
-MAINTAINER Jonathan Mainguy <jon@soh.re>
-RUN yum install -y git ruby rubygem-bundler && \
-    yum clean all
-RUN chmod 777 /opt
-RUN mkdir -p /opt/statuscode
-ADD . /opt/statuscode
-WORKDIR /opt/statuscode
-ENV HOME=/opt/statuscode
-RUN gem install bundler
-RUN bundle update --bundler
-RUN bundler
+FROM cgr.dev/chainguard/ruby:latest-dev as builder
+
+ENV GEM_HOME=/work/vendor
+ENV GEM_PATH=${GEM_PATH}:/work/vendor
+COPY Gemfile /work/
+RUN gem install bundler && bundle install
+
+FROM cgr.dev/chainguard/ruby:latest
+
+ENV GEM_HOME=/work/vendor
+ENV GEM_PATH=${GEM_PATH}:/work/vendor
+
+COPY --from=builder /work/ /work/
+COPY app.rb /work/
 EXPOSE 4567
-USER 1337:1337
-CMD ["ruby", "/opt/statuscode/app.rb"]
+
+ENTRYPOINT [ "ruby", "app.rb" ]
