@@ -15,4 +15,4 @@ permissions:
 
 jobs:
   docker-ci:
-    uses: Jmainguy/docker-workflows/.github/workflows/docker-ci.yml@v2
+    uses: Jmainguy/docker-workflows/.github/workflows/docker-ci.yml@v3
