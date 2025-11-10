@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 require 'sinatra'
+require 'webrick'
 
 # Set production so bind listens on 0.0.0.0 by default
 set :environment, :production
+set :server, :webrick
 
 statushash = Hash.new
 statushash["100"] = "Continue"
