@@ -20,3 +20,8 @@ jobs:
       image_name: ${{ github.event.repository.name }}
       authors: "Jonathan Seth Mainguy <jon@soh.re>"
       vendor: "Jmainguy"
+      url: "https://github.com/${{ github.repository }}"
+      source: "https://github.com/${{ github.repository }}"
+      description: "A Docker image for statuscode"
+      title: "Statuscode Docker Image"
+      licenses: "GPL-2.0"
