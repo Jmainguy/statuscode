@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/Jmainguy/statuscode/compare/v1.0.1...v2.0.0) (2026-08-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* publish hardened signed Ruby image
+
+### Features
+
+* publish hardened signed Ruby image ([05f5ea7](https://github.com/Jmainguy/statuscode/commit/05f5ea778f4c310356dc986ec299532169bef5c2))
+
 ## [1.0.1](https://github.com/Jmainguy/statuscode/compare/v1.0.0...v1.0.1) (2025-11-10)
 
 
