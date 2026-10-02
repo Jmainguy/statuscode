@@ -1,15 +1,15 @@
-FROM cgr.dev/chainguard/ruby:latest-dev@sha256:a4077a55ca2d3bb0cb2ec3f6a4a831b64d8adb18e72a8c467e877adfe32ac20f AS builder
+FROM cgr.dev/chainguard/ruby:latest-dev@sha256:5d2a0037b63e804d65a2c7deb5209603e339ad50037e19f18a4e00c282292ba8 AS builder
 WORKDIR /work
 
 ENV GEM_HOME=/work/vendor
 ENV BUNDLE_PATH=/work/vendor
 COPY Gemfile Gemfile.lock /work/
-RUN gem install bundler --version 4.0.19 --no-document \
+RUN gem install bundler --version 4.0.22 --no-document \
     && bundle config set deployment true \
     && bundle config set without 'development test' \
     && bundle install --jobs 4
 
-FROM cgr.dev/chainguard/ruby:latest@sha256:8c10fff2d529ac801a6ba97db2cbaf372439c66c27bb1c2d95a779dd711bcc02
+FROM cgr.dev/chainguard/ruby:latest@sha256:30a55aacc9e1811c88e55ea3be8dcfac86e5a7fa2f6ae7cd65531df311ed062e
 WORKDIR /work
 
 ENV GEM_HOME=/work/vendor/ruby/4.0.0
