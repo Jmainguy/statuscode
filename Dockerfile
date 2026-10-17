@@ -9,7 +9,7 @@ RUN gem install bundler --version 4.0.22 --no-document \
     && bundle config set without 'development test' \
     && bundle install --jobs 4
 
-FROM cgr.dev/chainguard/ruby:latest@sha256:30a55aacc9e1811c88e55ea3be8dcfac86e5a7fa2f6ae7cd65531df311ed062e
+FROM cgr.dev/chainguard/ruby:latest@sha256:7ad797330674bfe4ed32046716cc955437ede1c7bb37df84c9168bd226a5602a
 WORKDIR /work
 
 ENV GEM_HOME=/work/vendor/ruby/4.0.0
