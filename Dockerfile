@@ -1,4 +1,4 @@
-FROM cgr.dev/chainguard/ruby:latest-dev@sha256:5d2a0037b63e804d65a2c7deb5209603e339ad50037e19f18a4e00c282292ba8 AS builder
+FROM cgr.dev/chainguard/ruby:latest-dev@sha256:f0ff03ad1750f6f12c2ac5c1c1e6d0bee0a9c1d3097fde9c3c896a2ab415ada0 AS builder
 WORKDIR /work
 
 ENV GEM_HOME=/work/vendor
